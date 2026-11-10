@@ -1,0 +1,14 @@
+[Unit]
+Description=AI Admin Agent
+After=network.target
+
+[Service]
+Type=simple
+User=aiadmin
+WorkingDirectory=/opt/ai-admin-agent
+EnvironmentFile=/opt/ai-admin-agent/.env
+ExecStart=/opt/ai-admin-agent/agent/venv/bin/python -m agent.main
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
