@@ -2,4 +2,6 @@ version: '3.8'
 services:
   agent:
     build: ..
-    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    env_file: .env

@@ -25,17 +25,17 @@ if ! id "aiadmin" &>/dev/null; then
     echo "Created user aiadmin"
 fi
 
-# Clone or use existing
 INSTALL_DIR="/opt/ai-admin-agent"
 if [ ! -d "$INSTALL_DIR" ]; then
     sudo mkdir -p "$INSTALL_DIR"
     sudo chown aiadmin:aiadmin "$INSTALL_DIR"
-    sudo -u aiadmin git clone https://github.com/<USERNAME>/ai-admin-agent.git "$INSTALL_DIR"
+    # Assume already cloned or user will place files here
+    echo "Please ensure the repo is at $INSTALL_DIR"
 fi
 
 cd "$INSTALL_DIR"
 
-# Run wizard as aiadmin
+# Run wizard
 sudo -u aiadmin python3 -m venv wizard/venv || true
 sudo -u aiadmin wizard/venv/bin/pip install -r wizard/requirements.txt -q
 sudo -u aiadmin wizard/venv/bin/python wizard/wizard.py

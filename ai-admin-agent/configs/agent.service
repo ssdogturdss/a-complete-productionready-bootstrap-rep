@@ -7,7 +7,7 @@ Type=simple
 User=aiadmin
 WorkingDirectory=/opt/ai-admin-agent
 EnvironmentFile=/opt/ai-admin-agent/.env
-ExecStart=/opt/ai-admin-agent/agent/venv/bin/python -m agent.main
+ExecStart=/opt/ai-admin-agent/agent/venv/bin/python -m uvicorn agent.main:app --host 0.0.0.0 --port 8080
 Restart=always
 
 [Install]

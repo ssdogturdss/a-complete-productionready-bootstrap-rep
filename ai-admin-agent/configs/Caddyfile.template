@@ -1,3 +1,4 @@
-{{domain}} {
-    reverse_proxy localhost:{{port}}
+# Caddyfile template for AI Admin Agent
+{{DOMAIN}} {
+    reverse_proxy localhost:8080
 }

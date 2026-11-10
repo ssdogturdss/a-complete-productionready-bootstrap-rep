@@ -1,9 +1,10 @@
 # Architecture
 
-- install.sh: Bootstrap
-- wizard/: Collects config and provisions
-- agent/: FastAPI + tool-calling loop
-- Tools implement real GitHub API, Docker, Caddy, shell with safety
-- Memory: SQLite for deployments
+- FastAPI web UI + chat
+- Tool-calling loop in agent_loop.py
+- Tools live in agent/tools/
+- Config via .env + Pydantic
+- Deployments stored in JSON (memory.py)
+- systemd + Caddy for production
 
-All operations logged. Safety via confirmation_level.
+See README for usage.

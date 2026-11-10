@@ -1,3 +1,6 @@
 #!/bin/bash
-apt-get update
-apt-get install -y docker.io python3-venv
+set -e
+echo "Setting up prerequisites..."
+sudo apt-get update -qq
+sudo apt-get install -y -qq git curl python3 python3-venv docker.io caddy
+echo "Prerequisites ready."
